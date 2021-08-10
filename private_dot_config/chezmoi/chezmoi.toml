@@ -1,0 +1,4 @@
+encryption = "gpg"
+[gpg]
+  recipient = "me@lgdweb.fr"
+  symemtric = true
