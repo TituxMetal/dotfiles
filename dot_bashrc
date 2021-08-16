@@ -9,5 +9,8 @@ export EDITOR=vim
 
 alias ls='ls -lhs --color'
 alias ll='ls -lha --color'
+alias ip='curl ipv4.icanhazip.com'
 
 PS1='[\u@\h \W]\$ '
+
+neofetch
