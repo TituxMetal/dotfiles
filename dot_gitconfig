@@ -1,9 +1,9 @@
 [gpg]
 	program = gpg
 [user]
-	signingkey = 1288651EEF84288F
+	signingkey = github@lgdweb.fr
 	email = github@lgdweb.fr
-	name = Titux Metal
+	name = Titux Metal (MBP)
 [commit]
 	gpgsign = true
 [core]
