@@ -1,0 +1,15 @@
+{{- $email := promptString "email" -}}
+{{- $githubemail := promptString "githubemail" -}}
+{{- $githubusername := promptString "githubusername" -}}
+
+[data]
+  githubemail = "{{ $githubemail }}"
+  githubusername = "{{ $githubusername }}"
+  email = "{{ $email }}"
+
+  
+[gpg]
+  recipient = "{{ .email }}"
+  symemtric = true
+
+encryption = "gpg"
