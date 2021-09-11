@@ -14,7 +14,7 @@ export GPG_TTY=$(tty)
 
 gpg-connect-agent updatestartuptty /bye
 
-echo "1234" | gpg -q --batch --status-fd 1 --sign --local-user me@lgdweb.fr --passphrase-fd 0 > /dev/null && echo ok
+echo "1234" | gpg -q --batch --status-fd 1 --sign --local-user {{ .email }} --passphrase-fd 0 > /dev/null && echo ok
 
 # ssh -T git@github.com
 
