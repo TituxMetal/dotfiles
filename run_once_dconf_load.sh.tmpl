@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# private_dot_config/dconf/user.ini.tmpl hash: {{ include "private_dot_config/dconf/user.ini.tmpl" | sha256sum }}
+dconf load / < {{ joinPath .chezmoi.homeDir ".config/dconf/user.ini" | quote }}
