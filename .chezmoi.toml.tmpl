@@ -1,14 +1,3 @@
-{{- $isxfce := false -}}
-{{- $ismate := false -}}
-
-{{- if (env "ISXFCE") -}}
-{{- $isxfce = true -}}
-{{- end }}
-
-{{- if (env "ISMATE") -}}
-{{- $ismate = true -}}
-{{- end }}
-
 {{- $email := promptString "email" -}}
 {{- $githubemail := promptString "githubemail" -}}
 {{- $githubusername := promptString "githubusername" -}}
@@ -17,8 +6,6 @@
   githubemail = "{{ $githubemail }}"
   githubusername = "{{ $githubusername }}"
   email = "{{ $email }}"
-  isxfce = {{ $isxfce }}
-  ismate = {{ $ismate }}
 
 [gpg]
   recipient = "{{ .email }}"
