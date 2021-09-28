@@ -4,9 +4,10 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-unset SSH_AGENT_PID
-
-PATH="${HOME}/.bin:${HOME}/.local/bin:${PATH}"
-
+export PATH="${HOME}/.bin:${HOME}/.local/bin:${PATH}"
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 export GPG_TTY=$(tty)
+
+source ~/alice/colorrc
+
+export PS1="${BBlue}\u@\h: ${BCyan}\w${BPurple}\$(parseGitBranch) ${Yellow}\$(date +%H:%M:%S)\n${BCyan}\\$ ${NC}"
