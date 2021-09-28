@@ -1,6 +1,8 @@
 {
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.autoIndent": "advanced",
   "editor.bracketPairColorization.enabled": true,
+  "editor.detectIndentation": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
   "editor.lineHeight": 2,
@@ -18,9 +20,18 @@
   "security.workspace.trust.enabled": false,
   "security.workspace.trust.startupPrompt": "never",
   "telemetry.enableTelemetry": false,
-  "terminal.external.linuxExec": "alacritty",
   "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash",
+      "args": [
+        "-l"
+      ]
+    }
+  },
   "terminal.integrated.scrollback": 1000000000000,
   "update.mode": "none",
   "update.showReleaseNotes": false,
