@@ -1,0 +1,14 @@
+#!/bin/sh
+
+numlockx on&
+sleep 1; xset dpms 0 0 0 -dpms s 0 0 b 0 0 0
+
+xbindkeys&
+pcmanfm --daemon-mode&
+wallpaper&
+{{ if (eq .chezmoi.hostname "devbox") }}
+tripleScreen.sh&
+{{ else if (eq .chezmoi.hostname "gamebox") }}
+dualScreen.sh&
+{{ end }}
+/usr/bin/alacritty -e startGpg.sh
