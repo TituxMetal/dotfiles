@@ -26,22 +26,27 @@
 
 "playerctl previous"
   XF86AudioPrev
-{{ if (eq .chezmoi.hostname "devbox") }}
-"tripleScreen.sh"
+
+{{- if (eq .chezmoi.hostname "devbox") }}
+"multiscreen.sh tripleScreen"
   Mod4 + Shift + y
 
-"dualRightScreen.sh"
-  Mod4 + Shift + g
+"multiscreen.sh dualRightScreen"
+  Mod4 + Shift + u
 
-"singleRightScreen.sh"
-  Mod4 + Shift + h
-{{ else if (eq .chezmoi.hostname "gamebox") }}
-"dualScreen.sh"
+"multiscreen.sh dualLeftScreen"
+  Mod4 + Shift + t
+{{- end }}
+
+{{- if (eq .chezmoi.hostname "gamebox") }}
+"multiscreen.sh dualScreen"
   Mod4 + Shift + y
+{{- end }}
 
-"singleLeftScreen.sh"
+{{- if (or ( eq .chezmoi.hostname "devbox") (eq .chezmoi.hostname "gamebox")) }}
+"multiscreen.sh singleRightScreen"
+  Mod4 + Shift + j
+
+"multiscreen.sh singleLeftScreen"
   Mod4 + Shift + g
-
-"singleRightScreen.sh"
-  Mod4 + Shift + h
-{{ end }}
+{{- end }}
