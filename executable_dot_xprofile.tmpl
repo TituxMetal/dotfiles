@@ -7,8 +7,8 @@ xbindkeys&
 pcmanfm --daemon-mode&
 wallpaper&
 {{ if (eq .chezmoi.hostname "devbox") }}
-tripleScreen.sh&
+multiscreen.sh tripleScreen&
 {{ else if (eq .chezmoi.hostname "gamebox") }}
-dualScreen.sh&
+multiscreen.sh dualScreen&
 {{ end }}
 /usr/bin/alacritty -e startGpg.sh
