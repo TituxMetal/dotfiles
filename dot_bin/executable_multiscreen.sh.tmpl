@@ -1,5 +1,5 @@
 #!/bin/sh
-
+{{- if (eq .chezmoi.hostname "devbox") }}
 tripleScreen() {
   xrandr --output DVI-I-0 --off --output DVI-I-1 --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate normal --output DVI-D-0 --primary --mode 1920x1200 --pos 1920x0 --rotate normal
   notify-send 'Triple Screen output enabled'
@@ -24,5 +24,21 @@ singleRightScreen() {
   xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-D-0 --off
   notify-send 'Single Right Screen output enabled'
 }
+{{- else if (eq .chezmoi.hostname "gamebox") }}
+dualScreen() {
+  xrandr --output DVI-I-0 --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-I-1 --off --output HDMI-0 --primary --mode 1920x1200 --pos 1920x0 --rotate normal
+  notify-send 'Dual Screen output enabled'
+}
+
+singleLeftScreen() {
+  xrandr --output DVI-I-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-I-1 --off --output HDMI-0 --off
+  notify-send 'Single Left Screen output enabled'
+}
+
+singleRightScreen() {
+  xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --primary --mode 1920x1200 --pos 1920x0 --rotate normal
+  notify-send 'Single Right Screen output enabled'
+}
+{{- end }}
 
 $1
