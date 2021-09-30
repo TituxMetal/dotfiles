@@ -1,0 +1,73 @@
+general {
+  colors = true
+  interval = 4
+}
+
+order += "tztime local"
+order += "load"
+order += "memory"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "disk /"
+{{ if (eq .chezmoi.hostname "devbox") }}
+order += "disk /media/AllDataZ"
+{{ end }}
+order += "volume master"
+{{ if (eq .chezmoi.hostname "devbox") }}
+order += "ethernet enp4s0"
+{{ end }}
+{{ if (eq .chezmoi.hostname "mbp") }}
+order += "battery 0"
+{{ end }}
+
+memory {
+  memory_used_method = memavailable
+  format = " Mem: %used | %total"
+  threshold_degraded = "10%"
+  format_degraded = "MEMORY: %free"
+}
+
+volume master {
+  format = " ♪: %volume "
+  format_muted = " ♪: muted (%volume)"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}
+
+cpu_temperature 0 {
+  format = " T: %degrees °C "
+  max_threshold = "60"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+}
+
+load {
+  format = " %1min "
+}
+
+ethernet enp4s0 {
+  format_up = " %ip "
+  format_down = "down "
+}
+
+tztime local {
+  format = " %H:%M %a %d %b week %V "
+  timezone = "Europe/Paris"
+}
+
+disk "/" {
+  format = " sda: %avail "
+}
+
+disk "/media/AllDataZ" {
+  format = " dataz: %avail "
+}
+
+cpu_usage {
+  format = " CPU %usage "
+}
+
+battery 0 {
+  format = "%status %percentage %remaining"
+  last_full_capacity = true
+}
