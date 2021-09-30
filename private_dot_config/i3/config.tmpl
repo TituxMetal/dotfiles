@@ -1,0 +1,370 @@
+# ------------------------------------------------------------------------
+# Start of all the settings
+# ------------------------------------------------------------------------
+
+# KEY DEFINITIONS TO REMEMBER
+
+# $Mod = WINDOWS key or Super key or Mod4
+# Mod1 = ALT key
+# Control = CTRL key
+# Shift = SHIFT key
+# Escape = ESCAPE key
+# Return = ENTER or RETURN key
+# KP_Enter = Keypad Enter
+# Pause = PAUSE key
+# Print = PRINT key
+# Tab = TAB key
+
+
+# ------------------------------------------------------------------------
+# Define the $mod key variables
+# ------------------------------------------------------------------------
+# Set the primary $mod key to Super
+set $mod Mod4
+# Set the alternative $mod2 key to Alt
+set $mod2 Mod1
+# Set the control $ctrl key to Control
+set $ctrl Control
+# Set the $shift key to Shift
+set $shift Shift
+
+# Set movements keys like vim for azerty keyboard
+set $left k
+set $down l
+set $up o
+set $right m
+
+# ------------------------------------------------------------------------
+# Screen settings variables
+# ------------------------------------------------------------------------
+{{ if (eq .chezmoi.hostname "devbox") }}
+            # --------------
+            # DevBox Setup
+            # --------------
+# Set the primary screen $pScreen to DVI-D-0
+set $pScreen DVI-D-0
+# Set the $leftScreen to DVI-I-1
+set $leftScreen DVI-I-1
+# Set the $rightScreen to HDMI-0
+set $rightScreen HDMI-0
+{{ else if (eq .chezmoi.hostname "gamebox") }}
+            # --------------
+            # GameBox setup
+            # --------------
+# Set the primary screen $pScreen to HDMI-0
+set $pScreen HDMI-0
+# Set the $leftScreen to DVI-I-0
+set $leftScreen DVI-I-0
+{{ end }}
+
+# ------------------------------------------------------------------------
+# Workspaces variables
+# ------------------------------------------------------------------------
+set $one "1:/"
+set $two "2:!"
+set $three "3:)"
+set $four "4:/"
+set $five "5: Mail"
+set $six "6: Music"
+set $seven "7: Monit"
+set $eight "8:Tchat"
+set $nine "9:+"
+set $ten "10:+"
+set $eleven "11:+"
+set $twelve "12:+"
+
+# ------------------------------------------------------------------------
+# Set primary Arc Dark theme color variables
+# ------------------------------------------------------------------------
+set $darkGray #404552
+set $gray #4b5162
+set $lightGray #7c818c
+set $lightBlue #5294e2
+set $black #383c4a
+set $white #d1d1d1
+set $red #cc241d
+set $yellow #d79921
+
+# ------------------------------------------------------------------------
+# I3 GAPS AND BORDERS
+# ------------------------------------------------------------------------
+gaps inner 8
+gaps outer 5
+smart_gaps on
+smart_borders on
+default_border normal 2
+
+# ------------------------------------------------------------------------
+# WINDOW COLORS
+# ------------------------------------------------------------------------
+# class                border    background     text     indicator   childBorder
+client.focused         $lightGray   $black   $lightBlue   $yellow     $lightGray
+client.focused_inactive $darkGray    $gray      $yellow   $yellow      $darkGray
+client.unfocused        $darkGray    $gray      $yellow   $yellow      $darkGray
+client.urgent                $red     $red        $gray   $yellow           $red
+
+# ------------------------------------------------------------------------
+# FONTS
+# ------------------------------------------------------------------------
+font pango:Noto Mono Regular 12
+
+# ------------------------------------------------------------------------
+# CHANGE FOCUS
+# ------------------------------------------------------------------------
+# Primary vim mode
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Alternative arrow mode
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# ------------------------------------------------------------------------
+# MOVE FOCUSED WINDOW
+# ------------------------------------------------------------------------
+# Primary vim mode
+bindsym $mod+$shift+$left move left
+bindsym $mod+$shift+$down move down
+bindsym $mod+$shift+$up move up
+bindsym $mod+$shift+$right move right
+
+# Alternative arrow mode
+bindsym $mod+$shift+Left move left
+bindsym $mod+$shift+Down move down
+bindsym $mod+$shift+Up move up
+bindsym $mod+$shift+Right move right
+
+{{ if (eq .chezmoi.hostname "devbox") }}
+# ------------------------------------------------------------------------
+# WORKSPACES ON SPECIFIC SCREEN
+# ------------------------------------------------------------------------
+# Uncomment lines depending on what machine we are
+workspace $one output $pScreen
+workspace $two output $rightScreen
+workspace $three output $leftScreen
+workspace $four output $pScreen
+workspace $five output $rightScreen
+workspace $six output $pScreen
+workspace $seven output $leftScreen
+{{ end }}
+# ------------------------------------------------------------------------
+# TARGET WINDOW ON SPECIFIC WORKSPACE
+# ------------------------------------------------------------------------
+assign [class="Visual Studio Code"] $one
+assign [class="Quodlibet"] $six
+assign [class="Thunderbird"] $five
+
+# ------------------------------------------------------------------------
+# SWITCH TO WORKSPACE
+# ------------------------------------------------------------------------
+bindsym $mod+1 workspace $one
+bindsym $mod+2 workspace $two
+bindsym $mod+3 workspace $three
+bindsym $mod+4 workspace $four
+bindsym $mod+5 workspace $five
+bindsym $mod+6 workspace $six
+bindsym $mod+7 workspace $seven
+bindsym $mod+8 workspace $eight
+bindsym $mod+9 workspace $nine
+bindsym $mod+0 workspace $ten
+bindsym $mod+XF86KbdBrightnessDown workspace $eleven
+bindsym $mod+XF86KbdBrightnessUp workspace $twelve
+
+# Enable workspace back and forth
+workspace_auto_back_and_forth yes
+workspace_layout stacking
+
+# ------------------------------------------------------------------------
+# MOVE CONTAINER TO WORKSPACE
+# ------------------------------------------------------------------------
+bindsym $mod+Shift+1 move container to workspace $one; workspace $one
+bindsym $mod+Shift+2 move container to workspace $two; workspace $two
+bindsym $mod+Shift+3 move container to workspace $three; workspace $three
+bindsym $mod+Shift+4 move container to workspace $four; workspace $four
+bindsym $mod+Shift+5 move container to workspace $five; workspace $five
+bindsym $mod+Shift+6 move container to workspace $six; workspace $six
+bindsym $mod+Shift+7 move container to workspace $seven; workspace $seven
+bindsym $mod+Shift+8 move container to workspace $eight; workspace $eight
+bindsym $mod+Shift+9 move container to workspace $nine; workspace $nine
+bindsym $mod+Shift+0 move container to workspace $ten; workspace $ten
+bindsym $mod+Shift+XF86KbdBrightnessDown move container to workspace $eleven; workspace $eleven
+bindsym $mod+Shift+XF86KbdBrightnessUp move container to workspace $twelve; workspace $twelve
+
+# ------------------------------------------------------------------------
+# MOVE ARROUND WORKSPACES
+# ------------------------------------------------------------------------
+bindsym $mod2+Tab workspace next
+bindsym $mod2+Shift+Tab workspace prev
+
+# Navigate workspaces next / previous vim mode
+bindsym $mod2+$right workspace next
+bindsym $mod2+$left workspace prev
+# Navigate workspaces next / previous alternative mode
+bindsym $mod2+Right workspace next
+bindsym $mod2+Left workspace prev
+
+# Disable the focus when Firefox is refreshing
+focus_on_window_activation none
+
+# ------------------------------------------------------------------------
+# WINDOW ROLES FLOATING MODE
+# ------------------------------------------------------------------------
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="^Preferences$"] floating enable
+for_window [window_role="Organizer"] floating enable
+for_window [window_role="setup"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_role="menu"] floating enable
+for_window [window_role="About"] floating enable
+for_window [window_type="splash"] floating enable
+for_window [title="Copying"] floating enable
+for_window [title="Deleting"] floating enable
+for_window [title="Moving"] floating enable
+
+# ------------------------------------------------------------------------
+# APPLICATIONS FLOATING MODE
+# ------------------------------------------------------------------------
+# Find the class / title with the program xprop
+for_window [title="alsamixer"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="fpakman"] floating enable
+for_window [class="GParted"] floating enable
+for_window [class="qt5ct|Lxappearance"] floating enable
+for_window [class="Kvantum"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable
+for_window [class="Timeset-gui"] floating enable
+for_window [class="Places"] floating enable
+for_window [title="galculator"] floating enable
+
+# ------------------------------------------------------------------------
+# ORIENTATION
+# ------------------------------------------------------------------------
+bindsym $mod+b split h
+bindsym $mod+v split v
+
+# ------------------------------------------------------------------------
+# FULLSCREEN
+# ------------------------------------------------------------------------
+bindsym $mod+f fullscreen
+
+# ------------------------------------------------------------------------
+# RESTART / RELOAD
+# ------------------------------------------------------------------------
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+
+# ------------------------------------------------------------------------
+# KILL FOCUSED WINDOW
+# ------------------------------------------------------------------------
+bindsym $mod+Shift+q kill
+
+# ------------------------------------------------------------------------
+# SYSTEM MODE
+# ------------------------------------------------------------------------
+set $systemMode Exit mode press: (l) logout, (o) poweroff, (r) reboot
+mode "$systemMode"{
+  bindsym l exec --no-startup-id i3-msg exit, mode "default"
+  bindsym o exec --no-startup-id systemctl poweroff -i, mode "default"
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+
+  # back to default mode
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+Escape mode "$systemMode"
+
+# ------------------------------------------------------------------------
+# RESIZE MODE
+# ------------------------------------------------------------------------
+set $resizeMode Resize mode press: (h) - width, (j) - height, (k) + height, (l) + width
+mode "$resizeMode" {
+  # Vim mode
+  bindsym $left resize shrink width 10 px or 10 ppt
+  bindsym $up resize grow height 10 px or 10 ppt
+  bindsym $down resize shrink height 10 px or 10 ppt
+  bindsym $right resize grow width 10 px or 10 ppt
+
+  # Alternative mode
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "$resizeMode"
+
+# ------------------------------------------------------------------------
+# FLOATING MODE
+# ------------------------------------------------------------------------
+bindsym $mod+Shift+space floating toggle
+
+# Change the focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# ------------------------------------------------------------------------
+# SCRATCHPAD MODE
+# ------------------------------------------------------------------------
+bindsym $mod2+Shift+minus move scratchpad
+bindsym $mod2+Control+minus scratchpad show
+
+# ------------------------------------------------------------------------
+# TOGGLE CONTAINER LAYOUT STACKED / TABBED / SPLIT
+# ------------------------------------------------------------------------
+bindsym $mod+Tab layout toggle all
+
+# ------------------------------------------------------------------------
+# AUTOSTART APPLICATIONS
+# ------------------------------------------------------------------------
+# Authentication dialog
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Pamac tray
+exec --no-startup-id pamac-tray
+
+# ------------------------------------------------------------------------
+# I3 STATUS BAR
+# ------------------------------------------------------------------------
+bar {
+  position top
+  status_command i3status -c ~/.config/i3/i3status.conf
+  font pango:Noto Mono Regular 11
+
+{{ if (eq .chezmoi.hostname "devbox") }}
+  id bar-1
+   output $pScreen
+   tray_output $pScreen
+
+  id bar-2
+   output $leftScreen
+
+  id bar-3
+   output $rightScreen
+{{ end }}
+
+  colors {
+    background $black
+    statusline $white
+    separator  $gray
+
+#                       border        background    text
+    focused_workspace   $lightGray    $lightBlue    $white
+    active_workspace    $lightGray    $lightBlue    $gray
+    inactive_workspace  $lightGray    $black        $white
+    binding_mode        $yellow       $black        $white
+    urgent_workspace    $red          $black        $white
+  }
+}
