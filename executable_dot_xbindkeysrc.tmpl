@@ -1,0 +1,47 @@
+#!/bin/sh
+
+"pcmanfm"
+  Mod4 + Shift + Return
+
+"alacritty"
+  Mod4 + Return
+
+"rofi -show run -font 'Noto Sans 13'"
+  Mod4 + d
+
+"amixer -q set Master 2%- unmute"
+  XF86AudioLowerVolume
+
+"amixer -q set Master 2%+ unmute"
+  XF86AudioRaiseVolume
+
+"amixer -q -D pulse set Master toggle"
+  XF86AudioMute
+
+"playerctl play-pause"
+  XF86AudioPlay
+
+"playerctl next"
+  XF86AudioNext
+
+"playerctl previous"
+  XF86AudioPrev
+{{ if (eq .chezmoi.hostname "devbox") }}
+"tripleScreen.sh"
+  Mod4 + Shift + y
+
+"dualRightScreen.sh"
+  Mod4 + Shift + g
+
+"singleRightScreen.sh"
+  Mod4 + Shift + h
+{{ else if (eq .chezmoi.hostname "gamebox") }}
+"dualScreen.sh"
+  Mod4 + Shift + y
+
+"singleLeftScreen.sh"
+  Mod4 + Shift + g
+
+"singleRightScreen.sh"
+  Mod4 + Shift + h
+{{ end }}
