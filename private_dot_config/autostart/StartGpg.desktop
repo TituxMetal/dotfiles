@@ -3,5 +3,5 @@ Encoding=UTF-8
 Version=1
 Type=Application
 Name=StartGpg.desktop
-Exec=/usr/bin/alacritty -e startGpg.sh
+Exec=/usr/bin/alacritty --title startGpg -e startGpg.sh
 Hidden=false
