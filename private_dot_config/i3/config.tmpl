@@ -357,6 +357,15 @@ bar {
    output $rightScreen
 {{ end }}
 
+{{ if (eq .chezmoi.hostname "gamebox") }}
+  id bar-1
+   output $pScreen
+   tray_output $pScreen
+
+  id bar-2
+   output $leftScreen
+{{ end }}
+
   colors {
     background $black
     statusline $white
