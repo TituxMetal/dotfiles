@@ -13,6 +13,9 @@ order += "disk /"
 order += "disk /media/AllDataZ"
 {{ end }}
 order += "volume master"
+{{ if (eq .chezmoi.hostname "gamebox") }}
+order += "ethernet enp2s0"
+{{ end }}
 {{ if (eq .chezmoi.hostname "devbox") }}
 order += "ethernet enp4s0"
 {{ end }}
@@ -43,6 +46,11 @@ cpu_temperature 0 {
 
 load {
   format = " %1min "
+}
+
+ethernet enp2s0 {
+  format_up = " %ip "
+  format_down = "down "
 }
 
 ethernet enp4s0 {
