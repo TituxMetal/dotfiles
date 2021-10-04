@@ -142,7 +142,6 @@ bindsym $mod+$shift+Right move right
 # ------------------------------------------------------------------------
 # WORKSPACES ON SPECIFIC SCREEN
 # ------------------------------------------------------------------------
-# Uncomment lines depending on what machine we are
 workspace $one output $pScreen
 workspace $two output $rightScreen
 workspace $three output $leftScreen
@@ -150,6 +149,7 @@ workspace $four output $pScreen
 workspace $five output $rightScreen
 workspace $six output $pScreen
 workspace $seven output $leftScreen
+for_window [title="startGpg"] move container to workspace $three
 {{ end }}
 # ------------------------------------------------------------------------
 # TARGET WINDOW ON SPECIFIC WORKSPACE
@@ -243,7 +243,6 @@ for_window [class="qt5ct"] floating enable sticky enable
 for_window [class="Timeset-gui"] floating enable
 for_window [class="Places"] floating enable
 for_window [title="galculator"] floating enable
-for_window [title="startGpg"] move container to workspace $three
 
 # ------------------------------------------------------------------------
 # ORIENTATION
