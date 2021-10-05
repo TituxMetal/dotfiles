@@ -1,1 +1,5 @@
 settings.json
+{{ if ne .chezmoi.hostname "devbox" }}
+.config/quodlibet
+.config/gtk-3.0
+{{ end }}
