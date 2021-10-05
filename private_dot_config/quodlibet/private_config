@@ -1,0 +1,215 @@
+[header_maps]
+
+[rename]
+ascii = false
+spaces = false
+windows = true
+
+[settings]
+bayesian_rating_factor = 0.0
+columns = ~#track,title,artist,album,~#length,~#lastplayed
+	
+default_rating = 0.5
+disable_hints = false
+eager_search = true
+jump = true
+rating_symbol_blank = ☆
+rating_symbol_full = ★
+ratings = 4
+repeat = True
+scan = /home/titux/Musique/Alain_Souchon:/home/titux/Musique/Charles_Aznavour:/home/titux/Musique/Eddy_Mitchell:/home/titux/Musique/France_Gall:/home/titux/Musique/Georges_Brassens:/home/titux/Musique/Gilbert Bécaud:/home/titux/Musique/Jacques_Brel:/home/titux/Musique/Jacques_Dutronc:/home/titux/Musique/Joe_Dassin:/home/titux/Musique/Michel_Polnareff:/home/titux/Musique/Queen:/home/titux/Musique/Sandra:/home/titux/Musique/Serge_Gainsbourg:/home/titux/Musique/Serge_Lama:/home/titux/Musique/The_Beatles:/home/titux/Musique/The_Shadows:/home/titux/Musique/The_Beatles:/home/titux/Musique/Serge_Lama:/home/titux/Musique/Heavy Metal/At Vance:/home/titux/Musique/Heavy Metal/Avantasia:/home/titux/Musique/Heavy Metal/Edguy:/home/titux/Musique/Heavy Metal/Iron_Maiden:/home/titux/Musique/Heavy Metal/Joe_Satriani:/home/titux/Musique/Heavy Metal/Megadeth:/home/titux/Musique/Heavy Metal/Metallica:/home/titux/Musique/Heavy Metal/Nirvana:/home/titux/Musique/Heavy Metal/Serj_Tankian:/home/titux/Musique/Heavy Metal/System_Of_A_Down:/home/titux/Musique/Beethoven:/home/titux/Musique/Mozart:/home/titux/Musique/Dire_Straits:/home/titux/Musique/Eagles:/home/titux/Musique/James_Brown:/home/titux/Musique/Ray_Charles:/home/titux/Musique/The_Police:/home/titux/Musique/William_Sheller:/home/titux/Musique/Téléphone:/home/titux/Musique/100_Chefs-D'Œuvre_De_La_Musique_Classique:/home/titux/Musique/The_Offspring
+search_tags = 
+
+[__config__]
+version = 0
+
+[memory]
+browser = Paned
+browser_playlistsbrowser_maximized = 0
+browser_playlistsbrowser_position = 2099 142
+browser_playlistsbrowser_size_ = 600 400
+chooser_dir = /media/AllDataZ/Multimediaz/Musiquez/Musiques/Heavy Metal
+column_expands = title,0,artist,0,album,0,~#lastplayed,0
+	
+column_widths = title,441,artist,324,album,520,~#lastplayed,228
+	
+exfalso_last_active_version = 3.4.1
+exfalso_maximized = 0
+exfalso_paned_position = 1.0
+exfalso_position = 1757 322
+exfalso_size_ = 750 475
+open_browsers = 
+order = inorder
+order_shuffle = shuffle
+plugin_prefs_maximized = 0
+plugin_prefs_position = 1920 71
+plugin_prefs_size_ = 1920 1129
+plugin_selection = mpris
+prefs_page = library
+queue = False
+queue_disable = False
+queue_expanded = True
+queue_position = 0.6948775055679287
+quodlibet_information_maximized = 0
+quodlibet_information_position = 122 231
+quodlibet_information_size_ = 1509 650
+quodlibet_last_active_version = 4.4.0
+quodlibet_maximized = 4
+quodlibet_position = 1920 47
+quodlibet_properties_maximized = 0
+quodlibet_properties_pos = 0.27515833919774807
+quodlibet_properties_position = 424 393
+quodlibet_properties_size_ = 1421 671
+quodlibet_properties_size_single = 803 415
+quodlibet_size_ = 1920 1153
+repeat = True
+repeat_mode = repeat_all
+seek = 51825
+shuffle = True
+shuffle_mode = random
+shufflequeue = true
+sidebar_pos = 0.25
+song = /media/AllDataZ/Multimediaz/Musiquez/Musiques/Heavy Metal/Rhapsody/Rhapsody of Fire -2010- The Frozen Tears of Angels/08. On The Way To Ainor.mp3
+songlist = True
+sortby = 1~#lastplayed
+	
+volume = 1.0
+
+[library]
+exclude = 
+refresh_on_start = true
+
+[player]
+backend = gstbe
+fallback_gain = 0.0
+gst_buffer = 0.2
+gst_device = 
+gst_disable_gapless = false
+gst_pipeline = 
+is_playing = False
+pre_amp_gain = 1.5
+replaygain = true
+replaygain_mode = auto
+time_remaining = true
+
+[tagsfrompath]
+add = false
+split = false
+titlecase = false
+underscores = false
+
+[browsers]
+album_covers = 1
+album_sort = 0
+album_substrings = 1
+albumlist_pos = 0.399569197631
+albums = 
+audiofeeds_pos = 0.39979123173277664
+background = 
+collection_headers = ~people 0
+collectionbrowser_pos = 0.39979123173277664
+cover_size = -1
+covergrid_pos = 0.4
+filesystem_pos = 0.39979123173277664
+internetradio_pos = 0.39979123173277664
+mediadevices_pos = 0.399120395822
+pane_mode = Small
+pane_selection = 0	Symphonic Power Metal	.
+	1	.
+	1	.
+	1	.
+pane_wide_mode = false
+panedbrowser_pane_widths = 0.24947916666666667,0.33356545961002787,0.4380252100840336
+	
+panedbrowser_pos = 0.5234131113423517
+panes = genre	albumartist	album	artist
+playlistsbrowser_pos = 0.32045929018789143
+query_text = 
+radio = 
+rating_click = true
+rating_confirm_multiple = false
+search_limit = false
+soundcloud_pos = 0.39979123173277664
+soundcloud_token = 
+soundcloud_user_id = 
+
+[albumart]
+filename = folder.jpg
+force_filename = false
+prefer_embedded = false
+round = true
+
+[plugins]
+active_plugins = Shuffle Playlist
+	mpris
+	Download Album Art
+	Tray Icon
+	Theme Switcher
+	ReplayGain
+	Remove Playlist Duplicates
+	Equalizer
+	Automatic Rating
+	Animated On-Screen Display
+animosd_align = 1
+animosd_bcolor = (0.0, 0.0, 0.0, 0.2)
+animosd_corners = 0.14
+animosd_delay = 2500
+animosd_fill = (0.25, 0.25, 0.25, 0.5)
+animosd_font = Sans 14
+animosd_monitor = 0
+animosd_outline = -1.0 0.0 0.0
+animosd_pos_y = 0.0
+animosd_shadow = 0.0 0.0 0.0 0.5
+animosd_text = (0.9, 0.9, 0.9, 0.0)
+brainz_albumartist = true
+brainz_labelid = true
+brainz_split_disc = true
+brainz_standard = true
+cover_edit = False
+cover_edit_cmd = gimp
+cover_engine_amazon = True
+cover_engine_discogs = True
+cover_filename = cover.jpg
+cover_fit = True
+cover_fn = cover.jpg
+cover_resultsmax = 5
+cover_searchraw = False
+default_max_plugin_invocations = 30
+equalizer_levels = 2.6,2.4,2.2,2.0,1.8,1.8,2.0,2.2,2.4,2.6,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+icon_modifier_swap = True
+icon_tooltip = <album|<album~discnumber~part~tracknumber~title~version>|<artist~title~version>>
+icon_window_hide = False
+icon_window_visible = True
+missing_query_include_empty = True
+notify_show_notifications = all
+notify_show_only_when_unfocused = False
+quodlibet.fake.plugins.gajim_status_accounts = 
+quodlibet.fake.plugins.gajim_status_pattern = <artist> - <title>
+quodlibet.fake.plugins.gajim_status_paused = True
+quodlibet.fake.plugins.gajim_status_statuses = online chat
+quodlibet.fake.plugins.visualisations_executable = projectM-pulseaudio
+quodlibet.fake.plugins.wikipedia = en
+quodlibet.fake.plugins.write_cover = /home/titux/.quodlibet/current.cover
+randomalbum_use_weights = 0
+scrobbler_scrobbler_offline = False
+scrobbler_service = Last.fm
+shufflebygrouping_grouping = ~grouping~album~albumartist
+shufflebygrouping_grouping_filter = grouping
+squeezebox_debug = False
+theme switcher_prefer_dark = true
+theme switcher_prefer_header_bar = false
+theme switcher_theme = Vertex
+titlecase_allow_all_caps = True
+titlecase_human_title_case = True
+track_repeat_play_each = 2
+
+[editing]
+alltags = true
+auto_save_changes = false
+default_tags = 
+human_title_case = true
+id3encoding = 
+save_email = quodlibet@lists.sacredchao.net
+save_to_songs = true
+split_on = / & ,
+
